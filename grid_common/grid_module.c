@@ -340,7 +340,7 @@ void grid_ui_encoder_store_input(uint8_t input_channel, uint64_t* encoder_last_r
 		#endif
 		
 		// lookup table, of state machine of the combination of old encoder AB and new encoder AB
-		static int8_t encoder_heading[] = { 0, -1, 1, 0, 1, 0, 0, -1, -1, 0, 0, 1, 0, 1, -1, };
+		static int8_t encoder_heading[] = { 0, 1, -1, 0, -1, 0, 0, 1, 1, 0, 0, -1, 0, -1, 1, };
 		uint8_t encoder_state = (old_value & 0b11) <<2 | (new_value & 0b11);
 		delta = encoder_heading[encoder_state];
 
